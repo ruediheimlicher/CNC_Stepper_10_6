@@ -512,7 +512,7 @@ private void button4_Click(object sender, EventArgs e)
             else
             {
                NSRunAlertPanel (@"Invalid data format", @"Please only use hex values between 00 and FF.", @"OK", nil, nil);
-               //free (sendbuffer);
+               free (sendbuffer);
                return;
             }
             

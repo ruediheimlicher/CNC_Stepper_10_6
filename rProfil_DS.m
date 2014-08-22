@@ -15,6 +15,7 @@
 - (id)init
 {
 
+   self = [super init];
 	ProfilTabelle=[[NSMutableArray alloc]initWithCapacity:0];
 	[ProfilTabelle retain];
 	return self;
@@ -81,7 +82,7 @@ return ProfilTabelle;
 			row:(int)rowIndex
 {
 	//NSLog(@"objectValueForTableColumn");
-    NSDictionary *einTestDic;
+    NSDictionary *einTestDic = [NSDictionary dictionary];
 	if (rowIndex<[ProfilTabelle count])
 	{
 			einTestDic = [ProfilTabelle objectAtIndex: rowIndex];

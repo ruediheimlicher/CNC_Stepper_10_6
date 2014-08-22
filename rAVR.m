@@ -2319,7 +2319,7 @@ int min_value(float * p_array,unsigned int values_in_array,float * p_min_value)
    cncposition =0;
    if (i==0 || i==[KoordinatenTabelle count]-1)
    {
-      NSLog(@"reportStopKnopf SchnittdatenArray: %@",[SchnittdatenArray description]);
+      //NSLog(@"reportStopKnopf SchnittdatenArray: %@",[SchnittdatenArray description]);
    }
    
 	//NSLog(@"reportStopKnopf CNCDatenArray: %@",[CNCDatenArray description]);

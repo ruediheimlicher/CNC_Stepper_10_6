@@ -34,9 +34,14 @@
 
 	NSMutableDictionary* AchseTextDic=[[NSMutableDictionary alloc]initWithCapacity:0];
 	[AchseTextDic setObject:AchseTextFont forKey:NSFontAttributeName];
+   
 	NSMutableParagraphStyle* AchseStil=[[NSMutableParagraphStyle alloc]init];
 	[AchseStil setAlignment:NSRightTextAlignment];
 	[AchseTextDic setObject:AchseStil forKey:NSParagraphStyleAttributeName];
+   [AchseStil release];
+  
+
+
 	//NSLog(@"AchseTextDic: %@",[AchseTextDic description]);
 	NSRect AchsenRahmen=[self bounds];//NSMakeRect(NetzEcke.x,NetzEcke.y,200,100);
 	AchsenRahmen.size.height-=5;
@@ -74,7 +79,7 @@
 //	float delta=AchsenRahmen.size.height/(MajorTeile*MinorTeile);
 	//rechts.x+=NetzBoxRahmen.size.width-10.0;
 	//NSLog(@"rechts: %f",rechts.x);
-	NSNumber* Zahl=[NSNumber numberWithInt:0];
+	//NSNumber* Zahl=[NSNumber numberWithInt:0];
 	NSPoint MarkPunkt=links;
 	NSRect Zahlfeld=NSMakeRect(links.x-40,links.y-2,30,10);
 	//NSLog(@"MajorTeile: %d MinorTeile: %d ",MajorTeile,MinorTeile);
@@ -95,7 +100,7 @@
 			[WaagrechteLinie moveToPoint:MarkPunkt];
 			//	[NSBezierPath strokeRect: Zahlfeld];
 			//NSLog(@"i: %d Zahl: %2.2f",i,Bereich/(MajorTeile*MinorTeile)*i-Nullpunkt);
-			Zahl=[NSNumber numberWithFloat:Bereich/(MajorTeile*MinorTeile)*i-Nullpunkt];
+			NSNumber* Zahl=[NSNumber numberWithFloat:Bereich/(MajorTeile*MinorTeile)*i-Nullpunkt];
 			[[Zahl stringValue]drawInRect:Zahlfeld withAttributes:AchseTextDic];
 		}
 		[WaagrechteLinie lineToPoint:rechts];
@@ -104,13 +109,13 @@
 		MarkPunkt.y+=delta;
 		Zahlfeld.origin.y+=delta;
 	}
-
+   [AchseTextDic release];
 }
 
 - (void)setAchsenDic:(NSDictionary*)derAchsenDic
 {
 	NSLog(@"setAchsenDic: %@",[derAchsenDic description]);
-	NSRect AchsenRahmen=[self bounds];
+	//NSRect AchsenRahmen=[self bounds];
 if ([derAchsenDic objectForKey:@"einheit"])
 {
 	Einheit=[derAchsenDic objectForKey:@"einheit"];

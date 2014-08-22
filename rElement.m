@@ -125,7 +125,7 @@
 - (rElement*)ElementHolen:(NSString*)LibName
 {
    int erfolg=0;
-   rElement* LibElement;
+   rElement* LibElement = NULL;
    NSLog(@"ElementHolen");
    BOOL istOrdner;
    NSFileManager *Filemanager = [NSFileManager defaultManager];

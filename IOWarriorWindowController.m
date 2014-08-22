@@ -808,7 +808,7 @@ void DeviceRemoved(void *refCon, io_iterator_t iterator)
 		//NSLog(@"savePListAktion: gesicherter PListDic: %@",[tempPListDic description]);
 		
 		BOOL PListOK=[tempPListDic writeToURL:PListURL atomically:YES];
-		
+		[tempPListDic release];
 	}
 	//	NSLog(@"PListOK: %d",PListOK);
 	[USBPfad release];

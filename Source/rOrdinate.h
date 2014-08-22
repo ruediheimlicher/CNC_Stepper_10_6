@@ -9,10 +9,10 @@ NSPoint						AchsenSpitze;
 NSString*					Einheit;
 int							MajorTeile;
 int							MinorTeile;
-float						Max;
-float						Min;
-float						Nullpunkt;
-NSMutableArray*				EinheitenArray;
+float                   Max;
+float                   Min;
+float                   Nullpunkt;
+NSMutableArray*			EinheitenArray;
 }
 
 - (void)AchseZeichnen;

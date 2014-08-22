@@ -2477,6 +2477,7 @@
    
    NSNotificationCenter* nc=[NSNotificationCenter defaultCenter];
    [nc postNotificationName:@"LibElementeingabe" object:self userInfo:ElementDic];
+   
    //startx=endx+startx;
    //starty=endy+starty;
    
